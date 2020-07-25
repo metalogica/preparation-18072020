@@ -8,5 +8,6 @@ class ProductsTest < ApplicationSystemTestCase
     save_and_open_screenshot
     # 3. verfiy
     assert_selector 'h1', text: 'Awesome Products'
+    assert_selector '.card-product', count: Product.count
   end
 end
