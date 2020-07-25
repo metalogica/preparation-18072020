@@ -1,7 +1,13 @@
 # 1. Setup test environment
-skello:
-  name: 'Skello'
-  tagline: 'Manage your staff calendar'
-roadstr:
-  name: 'Roadstr'
-  tagline: 'Rent a vintage car'
+<% 1.upto(5) do |i| %>
+  product_<%= i %>:
+    name: <%= Faker::Company.name %>
+    tagline: <%= Faker::Company.catch_phrase %>
+<% end %>
+
+# skello:
+#   name: 'Skello'
+#   tagline: 'Manage your staff calendar'
+# roadstr:
+#   name: 'Roadstr'
+#   tagline: 'Rent a vintage car'
