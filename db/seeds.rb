@@ -8,4 +8,6 @@ puts "Creating 5 products..."
     puts "Created Product Number `#{i+1}` `#{product.name}`"
 end
 
+User.create! email: 'richard@email.com', first_name: 'richard', last_name: 'jarram', password: 'qwerty'
+
 puts "Seed completed."

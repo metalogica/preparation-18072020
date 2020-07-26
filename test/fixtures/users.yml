@@ -1,0 +1,7 @@
+# 1. setup test env: prepare test database with 1 user
+satoshi:
+  email: 'satoshi.nakamoto@email.com'
+  first_name: 'satoshi'
+  last_name: 'nakamoto' 
+
+  
