@@ -5,7 +5,7 @@ class ProductsTest < ApplicationSystemTestCase
   test 'visiting the index page works' do
     visit root_path
     # use launchy to show the test results from headless chrome
-    save_and_open_screenshot
+    # save_and_open_screenshot
     # 3. verfiy
     assert_selector 'h1', text: 'Awesome Products'
     assert_selector '.card-product', count: Product.count
@@ -26,5 +26,15 @@ class ProductsTest < ApplicationSystemTestCase
     # Should be redirected to Home with new product
     assert_equal root_path, page.current_path
     assert_text "Change your life: Learn to code"
+  end
+
+  test 'users who create an invalid product should get an error message' do
+    login_as users(:satoshi)
+    visit "/products/new"
+
+    click_on 'Create Product'
+    save_and_open_screenshot
+
+    assert_text "Name can't be blank"
   end
 end
